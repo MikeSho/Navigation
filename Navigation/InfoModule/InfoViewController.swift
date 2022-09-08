@@ -7,7 +7,9 @@
 
 import UIKit
 
-class InfoViewController: UIViewController {
+final class InfoViewController: UIViewController {
+    
+    let post = FeedViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,21 +20,23 @@ class InfoViewController: UIViewController {
         view.backgroundColor = .white
         addTargets()
         setupAlertConfiguration()
-        view.addSubview(button)
+        view.addSubview(infoButton)
     }
     
-    private let button: UIButton = {
-        let button = UIButton(frame: CGRect(x: 30, y: 30, width: 120, height: 120))
-        button.setTitle("Show post info", for: .normal)
-        button.setTitleColor(UIColor.black, for: .normal)
+    private let infoButton: UIButton = {
+        let button = UIButton(frame: CGRect(x: screenSize.width / 2 - 120, y: screenSize.height / 2 - 30, width: 240, height: 60))
+        button.setTitle("Show info", for: .normal)
+        button.setTitleColor(UIColor.white, for: .normal)
+        button.layer.cornerRadius = screenSize.height / 15 / 3
+        button.backgroundColor = #colorLiteral(red: 0.09288740903, green: 0.5254676342, blue: 1, alpha: 1)
         return button
     }()
     
     func addTargets() {
-        button.addTarget(self, action: #selector(addTarget), for: .touchUpInside)
+        infoButton.addTarget(self, action: #selector(addTarget), for: .touchUpInside)
     }
     
-    let alertController = UIAlertController(title: "This is title", message: "And this is a message", preferredStyle: .alert)
+    let alertController = UIAlertController(title: postComplex.title, message: postComplex.message, preferredStyle: .alert)
     
     func setupAlertConfiguration() {
         alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in

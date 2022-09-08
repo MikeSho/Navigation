@@ -7,24 +7,22 @@
 
 import UIKit
 
-class PostViewController: UIViewController {
-    
+final class PostViewController: UIViewController {
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
     }
     
     func setupUI(){
-        view.backgroundColor = .blue
-        view.addSubview(label)
+        view.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        setupBarLabelItem()
         setupBarButtonItem()
     }
     
-    private let label: UILabel = {
-        let label = UILabel(frame: CGRect(x: UIScreen.main.bounds.width / 2, y: 30, width: 70, height: 12))
-        label.text = "Post #1"
-        return(label)
-    }()
+    func setupBarLabelItem() {
+        self.navigationItem.title = postComplex.title
+    }
     
     func setupBarButtonItem() {
         let baritem = UIBarButtonItem(image: UIImage(systemName: "bubble.right"), style: .plain, target: self, action: #selector(addTarget))
@@ -33,6 +31,6 @@ class PostViewController: UIViewController {
     
     @objc func addTarget(){
         let infoViewController = InfoViewController()
-        navigationController?.pushViewController(infoViewController, animated: true)
+        navigationController?.present(infoViewController, animated: true)
     }
 }

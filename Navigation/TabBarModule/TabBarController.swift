@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TabBarController: UITabBarController {
+final class TabBarController: UITabBarController {
     
     var feedTabNavigationController: UINavigationController!
     var profileTabNavigationController: UINavigationController!

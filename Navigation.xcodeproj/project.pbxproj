@@ -17,6 +17,7 @@
 		E98B21D728C785EC0082D6E1 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98B21D628C785EC0082D6E1 /* PostViewController.swift */; };
 		E98B21D928C79C1A0082D6E1 /* PostStrcture.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98B21D828C79C1A0082D6E1 /* PostStrcture.swift */; };
 		E98B21DC28C7A1960082D6E1 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98B21DB28C7A1960082D6E1 /* InfoViewController.swift */; };
+		E98B220028CA172C0082D6E1 /* AdditionalHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98B21FF28CA172C0082D6E1 /* AdditionalHelpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		E98B21D628C785EC0082D6E1 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		E98B21D828C79C1A0082D6E1 /* PostStrcture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostStrcture.swift; sourceTree = "<group>"; };
 		E98B21DB28C7A1960082D6E1 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		E98B21FF28CA172C0082D6E1 /* AdditionalHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalHelpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				E98B21D028C77E0C0082D6E1 /* FeedViewController.swift */,
 				E98B21D828C79C1A0082D6E1 /* PostStrcture.swift */,
+				E98B21FF28CA172C0082D6E1 /* AdditionalHelpers.swift */,
 			);
 			path = FeedModule;
 			sourceTree = "<group>";
@@ -199,6 +202,7 @@
 			files = (
 				E98B21D728C785EC0082D6E1 /* PostViewController.swift in Sources */,
 				E98B21CD28C777230082D6E1 /* TabBarController.swift in Sources */,
+				E98B220028CA172C0082D6E1 /* AdditionalHelpers.swift in Sources */,
 				E98B21D928C79C1A0082D6E1 /* PostStrcture.swift in Sources */,
 				E98B21B728C773790082D6E1 /* AppDelegate.swift in Sources */,
 				E98B21D328C77E170082D6E1 /* ProfileViewController.swift in Sources */,

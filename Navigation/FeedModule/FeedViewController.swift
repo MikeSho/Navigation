@@ -7,9 +7,9 @@
 
 import UIKit
 
-class FeedViewController: UIViewController {
+final class FeedViewController: UIViewController {
    
-    var postStruct = Post(title: "First post")
+    var postStruct = Post(title: "Post #1", message: "Hello! This is my first post!")
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -17,20 +17,22 @@ class FeedViewController: UIViewController {
     
     func setupUI() {
         addTargets()
-        view.addSubview(button)
+        view.addSubview(postButton)
         view.backgroundColor = .white
         
     }
     
-    private let button: UIButton = {
-        let button = UIButton(frame: CGRect(x: 30, y: 30, width: 120, height: 120))
+    private let postButton: UIButton = {
+        let button = UIButton(frame: CGRect(x: screenSize.width / 2 - 120, y: screenSize.height / 1.2 - 30, width: 240, height: 60))
         button.setTitle("Show post", for: .normal)
-        button.setTitleColor(UIColor.black, for: .normal)
+        button.setTitleColor(UIColor.white, for: .normal)
+        button.layer.cornerRadius = screenSize.height / 15 / 3
+        button.backgroundColor = #colorLiteral(red: 0.09288740903, green: 0.5254676342, blue: 1, alpha: 1)
         return button
     }()
     
     func addTargets() {
-        button.addTarget(self, action: #selector(showDetailController), for: .touchUpInside)
+        postButton.addTarget(self, action: #selector(showDetailController), for: .touchUpInside)
     }
     
     @objc func showDetailController() {
