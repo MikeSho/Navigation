@@ -88,30 +88,22 @@ class ProfileHeaderView: UIView {
             profileImage.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 16),
             profileImage.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
             profileImage.heightAnchor.constraint(equalToConstant: 100),
-            profileImage.widthAnchor.constraint(equalToConstant: 100)
-        ])
-        
-        NSLayoutConstraint.activate([
+            profileImage.widthAnchor.constraint(equalToConstant: 100),
+            
             profileName.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 27),
-            profileName.centerXAnchor.constraint(equalTo: self.centerXAnchor)
-        ])
+            profileName.centerXAnchor.constraint(equalTo: self.centerXAnchor),
         
-        NSLayoutConstraint.activate([
             statusButton.topAnchor.constraint(equalTo: profileImage.bottomAnchor, constant: 16),
             statusButton.centerXAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor),
             statusButton.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 16),
-            statusButton.heightAnchor.constraint(equalToConstant: 50)
-        ])
-        
-        NSLayoutConstraint.activate([
+            statusButton.heightAnchor.constraint(equalToConstant: 50),
+  
             currentStatus.bottomAnchor.constraint(equalTo: statusButton.topAnchor, constant: -50),
             currentStatus.centerXAnchor.constraint(equalTo: statusButton.centerXAnchor),
-        ])
-        
-        NSLayoutConstraint.activate([
+            
             statusField.topAnchor.constraint(equalTo: currentStatus.bottomAnchor, constant: 5),
             statusField.heightAnchor.constraint(equalToConstant: 40),
-            statusField.leftAnchor.constraint(equalTo: currentStatus.leftAnchor),
+            statusField.leftAnchor.constraint(equalTo: statusButton.leftAnchor, constant: 100),
             statusField.rightAnchor.constraint(equalTo: statusButton.rightAnchor)
         ])
     }
@@ -130,5 +122,11 @@ class ProfileHeaderView: UIView {
         if let i = textField.text {
             statusText = i
         }
+    }
+}
+
+extension UIView {
+    func addSubviews(_ subviews: UIView...) {
+        subviews.forEach { addSubview($0) }
     }
 }
