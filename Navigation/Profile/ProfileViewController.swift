@@ -9,7 +9,11 @@ import UIKit
 
 class ProfileViewController: UIViewController {
     
-    var profileHeaderView: ProfileHeaderView = ProfileHeaderView()
+    var profileHeaderView: ProfileHeaderView = {
+        let profileView = ProfileHeaderView()
+        profileView.translatesAutoresizingMaskIntoConstraints = false
+        return profileView
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,13 +24,18 @@ class ProfileViewController: UIViewController {
         setupBarLabelItem()
         view.backgroundColor = .lightGray
         view.addSubview(profileHeaderView)
-        viewWillLayoutSubviews()
-        
+        setupConstraint()        
     }
     
-    override func viewWillLayoutSubviews() {
-        profileHeaderView.frame = view.frame
+    func setupConstraint() {
+        NSLayoutConstraint.activate([
+            profileHeaderView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 0),
+            profileHeaderView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            profileHeaderView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+            profileHeaderView.heightAnchor.constraint(equalToConstant: 220)
+        ])
     }
+    
     
     func setupBarLabelItem() {
         self.navigationItem.title = "Profile"
